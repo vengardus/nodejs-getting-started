@@ -4,6 +4,7 @@ import {sequelize} from './database/database.js'
 // add import only for sync models with database
 // import './models/project.js'
 // import './models/task.js'
+import './models/product.js'
 
 async function main() {
     try {
@@ -16,6 +17,7 @@ async function main() {
 
         app.listen(process.env.PORT || 3000)
         console.log('Server is listening port', process.env.PORT || 3000)
+        console.log(process.env.DATABASE_URL)
     } catch (error) {
         console.log('Unable to connect to the database', error)        
     }

@@ -11,7 +11,8 @@ export const sequelize = new Sequelize(
     }
 )
 */
-export const sequelize = new Sequelize('postgres://hhjduylgxbnxbt:78d2dbad1642c5f8ba8ca678bb54b993028cf856442e666bc1e3414da4367580@ec2-3-227-195-74.compute-1.amazonaws.com:5432/d48o39f9bu4ocg', 
+export const sequelize = new Sequelize(
+  'postgresql://postgres:ad1234min@localhost/sample', 
   {
     dialectOptions: {
       ssl: {
