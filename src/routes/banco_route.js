@@ -4,6 +4,7 @@ import { getAllBanco } from '../controllers/banco_controller.js'
 const router = Router()
 
 router.get('/banco', getAllBanco)
+router.get('/', getAllBanco)
 /*
 router.post('/task',createTask)
 router.put('/task/:id', updateTask)
