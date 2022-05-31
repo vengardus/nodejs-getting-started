@@ -8,7 +8,7 @@ import './models/product.js'
 
 async function main() {
     try {
-        await sequelize.sync({force:false})
+        await sequelize.sync({force:true})
         //await sequelize.sync({force:true}) // drop and create
 
         // validate if connection is success
