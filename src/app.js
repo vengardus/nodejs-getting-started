@@ -7,6 +7,7 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 import projectRoute from './routes/project_route.js'
 import taskRoute from './routes/task_route.js'
 import bancoRoute from './routes/banco_route.js'
+import productRoute from './routes/product_route.js'
 
 
 const app = express()
@@ -25,6 +26,7 @@ app.use(express.static('static'))
 app.use(projectRoute)
 app.use(taskRoute)
 app.use(bancoRoute)
+app.use(productRoute)
 
 
 export default app

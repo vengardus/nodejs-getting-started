@@ -4,11 +4,11 @@ import {sequelize} from './database/database.js'
 // add import only for sync models with database
 // import './models/project.js'
 // import './models/task.js'
-import './models/product.js'
+// import './models/product.js'
 
 async function main() {
     try {
-        await sequelize.sync({force:true})
+        await sequelize.sync({force:false})
         //await sequelize.sync({force:true}) // drop and create
 
         // validate if connection is success
