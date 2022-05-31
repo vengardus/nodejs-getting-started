@@ -12,7 +12,7 @@ export const sequelize = new Sequelize(
 )
 */
 export const sequelize = new Sequelize(
-  'postgresql://postgres:ad1234min@localhost/sample', 
+  process.env.DATABASE_URL, 
   {
     dialectOptions: {
       ssl: {
