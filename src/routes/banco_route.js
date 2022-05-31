@@ -5,6 +5,11 @@ const router = Router()
 
 router.get('/banco', getAllBanco)
 router.get('/', getAllBanco)
+
+router.get('/banco_list', (req, res) => {
+    res.render('banco_list', {'name':'vengardus'})
+})
+
 /*
 router.post('/task',createTask)
 router.put('/task/:id', updateTask)
