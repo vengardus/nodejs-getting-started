@@ -3,6 +3,8 @@ import { getAll, insert, deleteOne, update, getById } from '../controllers/local
 
 const router = Router()
 
+console.log("LOCAL.ROUTE")
+
 router.get('/api/local', getAll)
 router.post('/api/local',insert)
 router.delete('/api/local/:id', deleteOne)

@@ -6,17 +6,19 @@ import {sequelize} from './database/database.js'
 // import './models/task.js'
 // import './models/product.js'
 import './models/to/tolocal.js'
-import './models/oficina.js'
+//import './models/oficina.js'
 
 async function main() {
-    //console.clear()
+    console.clear()
     try {
+        console.log('BEFORE')
         await sequelize.sync({force:false})
+        console.log('AFTER')
         //await sequelize.sync({force:true}) // drop and create
 
         // validate if connection is success
-        await sequelize.authenticate()
-        console.log('Connection has been established successfully.')
+        //await sequelize.authenticate()
+        //console.log('Connection has been established successfully.')
 
         app.listen(process.env.PORT || 3000)
         console.log('Server is listening port', process.env.PORT || 3000)
