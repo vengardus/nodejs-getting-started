@@ -14,6 +14,8 @@ import oficinaRoute from './routes/oficina_route.js'
 
 const app = express()
 
+console.log("TEST 02")
+
 // middlewares
 app.use(express.json())
 app.use(express.text())
