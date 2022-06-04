@@ -11,9 +11,7 @@ import './models/to/tolocal.js'
 async function main() {
     console.clear()
     try {
-        console.log('BEFORE')
         await sequelize.sync({force:false})
-        console.log('AFTER')
         //await sequelize.sync({force:true}) // drop and create
 
         // validate if connection is success

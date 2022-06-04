@@ -1,7 +1,6 @@
 import {Local} from '../models/local.js'
 
 export const getAll = async (req, res) => {
-    console.log('LOCAL.GETALL')
     const oLocal = new Local()
     await oLocal.getAll()
     if ( oLocal.aTO === null )
