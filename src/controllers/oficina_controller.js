@@ -1,8 +1,8 @@
-import {Product} from '../models/product.js'
+import {Oficina} from '../models/oficina.js'
 
-export const getAllProduct = async (req, res) => {
+export const getAll = async (req, res) => {
     try {
-        const aTO = await Product.findAll({
+        const aTO = await Oficina.findAll({
             order: [
                 ['id']
             ],
@@ -15,24 +15,24 @@ export const getAllProduct = async (req, res) => {
     }
 }
 
-export const createProduct = async(req, res) => {
+export const create = async(req, res) => {
     try {
         const {cod, desc} = req.body
 
-        const oTO = await Product.findOne(
+        const oTO = await Oficina.findOne(
             { where: {
                 cod: cod
             }}
         )
         if ( oTO !== null)
-            return res.status(404).json({message:"Producto ya existe"})
+            return res.status(404).json({message:"Oficinao ya existe"})
 
 
-        const newProduct = await Product.create({
+        const newOficina = await Oficina.create({
             cod,
             desc
         })
-        res.json(newProduct)    
+        res.json(newOficina)    
     } catch (error) {
         return res.status(500).json({message: error.message})
     }

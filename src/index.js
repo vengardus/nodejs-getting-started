@@ -5,8 +5,11 @@ import {sequelize} from './database/database.js'
 // import './models/project.js'
 // import './models/task.js'
 // import './models/product.js'
+// import './models/to/tolocal.js'
+import './models/oficina.js'
 
 async function main() {
+    //console.clear()
     try {
         await sequelize.sync({force:false})
         //await sequelize.sync({force:true}) // drop and create
@@ -17,7 +20,7 @@ async function main() {
 
         app.listen(process.env.PORT || 3000)
         console.log('Server is listening port', process.env.PORT || 3000)
-        console.log(process.env.DATABASE_URL)
+        //console.log(process.env.DATABASE_URL)
     } catch (error) {
         console.log('Unable to connect to the database', error)        
     }
