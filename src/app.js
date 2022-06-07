@@ -12,6 +12,7 @@ import localRoute from './routes/local_route.js'
 import oficinaRoute from './routes/oficina_route.js'
 import testRoute from './routes/test_route.js'
 import userRoute from './routes/user_route.js'
+import authRoute from './routes/auth_route.js'
 
 const app = express()
 
@@ -36,6 +37,7 @@ app.use(oficinaRoute)
 app.use(localRoute)
 app.use(testRoute)
 app.use(userRoute)
+app.use(authRoute)
 
 
 export default app

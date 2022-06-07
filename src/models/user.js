@@ -67,17 +67,11 @@ export class User extends Table {
      * Custom Methods 
      */
 
-    signIn(email, password) {
-        this.error = 1
-        this.message = 'Username o password incorrectos'
-        const oTO = this.findOne({email: email})
-        if ( oTO === null ) 
-            return false
-        if ( oTO.password !== password )
-            return false
-        this.error = 0
-        this.message = 'Usuario autorizado!'
-        return true
+    async validate_email_password(email, password) {
+        const oTO = await this.findOne({email: email})
+        if ( oTO === null ||  oTO.password !== password )
+            return null
+        return oTO
     }
 }
 

@@ -6,11 +6,14 @@ export class Auth {
         this.message = ''
     }
 
-    signIn(email, password) {
+    async signIn(email, password) {
         const oUser = new User()
-        const is_auth = oUser.signIn(email, password)
-        this.error = oUser.error
-        this.message = oUser.message
-        return is_auth
+        const oTOUser = await oUser.validate_email_password(email, password)
+        console.log('SIgIN', oTOUser)
+        if ( oTOUser === null ) {
+            this.error = 401
+            this.message = 'Email o password incorrectos'
+        }
+        return oTOUser
     }
 }
