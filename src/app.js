@@ -11,6 +11,7 @@ import productRoute from './routes/product_route.js'
 import localRoute from './routes/local_route.js'
 import oficinaRoute from './routes/oficina_route.js'
 import testRoute from './routes/test_route.js'
+import userRoute from './routes/user_route.js'
 
 const app = express()
 
@@ -31,9 +32,10 @@ app.use(projectRoute)
 app.use(taskRoute)
 app.use(bancoRoute)
 app.use(productRoute)
-app.use(localRoute)
 app.use(oficinaRoute)
+app.use(localRoute)
 app.use(testRoute)
+app.use(userRoute)
 
 
 export default app
