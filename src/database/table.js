@@ -8,8 +8,8 @@ export class Table {
     }
 
     /***
-     * find_values is a dictionary (object)
-     * example: { cod: '001' }
+     * @param {*} find_values dictionary. example: { cod: '001' }
+     * @Returns oTO or null if not found
      */
      async findOne(find_values) {
         const oTO = await this.model.findOne({ where: find_values })

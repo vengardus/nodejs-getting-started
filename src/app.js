@@ -1,5 +1,6 @@
 import express from 'express'
 import path from 'path'
+import cookieParser from 'cookie-parser';
 // set __dirname for mode type module
 import * as url from 'url';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
@@ -19,6 +20,7 @@ const app = express()
 // middlewares
 app.use(express.json())
 app.use(express.text())
+app.use(cookieParser())
 
 // sets
 app.set('views', path.join(__dirname, 'views'))

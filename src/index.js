@@ -7,7 +7,8 @@ import {sequelize} from './database/database.js'
 // import './models/product.js'
 //import './models/to/tolocal.js'
 //import './models/oficina.js'
-import './models/to/touser.js'
+//import './models/to/touser.js'
+import './models/to/tosession.js'
 
 
 async function main() {
