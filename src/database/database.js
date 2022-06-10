@@ -1,19 +1,6 @@
 import Sequelize from 'sequelize'
 import {} from 'dotenv/config'
 
-
-/*
-export const sequelize = new Sequelize(
-    'sample',
-    'postgres',
-    'ad1234min',import {} from 'dotenv/config'
-
-    {
-        host: 'localhost',
-        dialect: 'postgres'
-    }
-)
-*/
 export const sequelize = new Sequelize(
   process.env.DATABASE_URL, 
   {
