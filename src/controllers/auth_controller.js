@@ -39,6 +39,7 @@ export const authByToken = async(req, res) => {
     if ( ! oDTOLogin.validate(req.body) )
         return res.status(400).json({message:oDTOLogin.message})
     const {email, password} = oDTOLogin.dto
+    //
 
     const oAuth = new Auth()
     const oTOUser = await oAuth.authByToken(email, password)
