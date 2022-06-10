@@ -35,16 +35,22 @@ export const authBySession = async (req, res) => {
 }
 
 export const authByToken = async(req, res) => {
+    console.log('MESSAG 01')
     const oDTOLogin = new DTOLogin()
     if ( ! oDTOLogin.validate(req.body) )
-        return res.status(400).json({message:oDTOLogin.message})
+    return res.status(400).json({message:oDTOLogin.message})
     const {email, password} = oDTOLogin.dto
+    console.log('MESSAG 03')
     //
-
+    
     const oAuth = new Auth()
     const oTOUser = await oAuth.authByToken(email, password)
-    if ( oTOUser === null  )
+    console.log('MESSAG 04')
+    if ( oTOUser === null  ) {
+        console.log('MESSAG 05', oAuth.error)
+
         return res.status(oAuth.error).json({message:oAuth.message})
+    }
 
     return res.json({ jwt:oAuth.jwt, user: oTOUser })
       

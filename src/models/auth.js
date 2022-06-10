@@ -69,7 +69,7 @@ export class Auth {
             this.jwt = jwt
 
         } catch (error) {
-            this.error = 1
+            this.error = 401
             this.message = error.message
             return null
         }
